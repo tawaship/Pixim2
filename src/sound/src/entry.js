@@ -1,4 +1,7 @@
 import Sound from './Sound.js';
+import './ContentSoundManifest.js';
+import './ContentSpritesoundManifest.js';
+
 /*!
  * Pixim.sound.js
  * 

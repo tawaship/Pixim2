@@ -13,7 +13,7 @@ export default class Pixim_Sound {
 		data = data || {};
 		
 		data.onload = function() {
-			cb(key, new Sound(this));
+			cb(key, new Pixim_Sound(this));
 		};
 		
 		data.onloaderror = function(e) {
@@ -21,7 +21,7 @@ export default class Pixim_Sound {
 			ev.detail = e;
 			ecb(ev);
 			
-			cb(key, new Sound(this));
+			cb(key, new Pixim_Sound(this));
 		};
 		
 		new Howl(data);
