@@ -374,14 +374,17 @@ export default class Pixim_Application extends Emitter {
 	 * Display the content in full screen.
 	 * 
 	 * @function Pixim.Application#fullScreen
+	 * @param [rect=new Rect(0, 0, window.innerWidth, window.innerHeight)] {Pixim~Rect} Reference rectangle.
 	 * @return {Pixim.Application} Return a itself (can use method chaining).
 	 */
-	fullScreen() {
+	fullScreen(rect) {
+		rect = rect || new Rect(0, 0, window.innerWidth, window.innerHeight);
+		
 		var view = this._pixim.app.view;
-		if (window.innerWidth / window.innerHeight > view.width / view.height) {
-			this.adjustHeight(window.innerHeight).toCenter();
+		if (rect.width / rect.height > view.width / view.height) {
+			this.adjustHeight(rect.height).toCenter(rect);
 		} else {
-			this.adjustWidth(window.innerWidth).toMiddle();
+			this.adjustWidth(rect.width).toMiddle(rect);
 		}
 		
 		return this;

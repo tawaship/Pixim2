@@ -608,4 +608,19 @@ export default class Pixim_Content extends Emitter {
 		
 		loadAsset.call(this, 'postloadState', se, ee, this._pixim.additionalManifests, '');
 	}
+	
+	/**
+	 * Destroy content and all assets.
+	 * 
+	 * @function Pixim.Content#destroy
+	 */
+	destroy() {
+		this.clear();
+		for (let i in this._pixim.resources.sounds) {
+			this._pixim.resources.sounds[i].howl.unload();
+		}
+		for (let i in this._pixim.resources.spritesounds) {
+			this._pixim.resources.spritesounds[i].howl.unload();
+		}
+	}
 }

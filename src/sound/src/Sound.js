@@ -6,7 +6,6 @@
 export default class Pixim_Sound {
 	constructor(howl) {
 		this.howl = howl;
-		this._instanceIds = [];
 	}
 	
 	static create(key, data, cb, ecb) {
@@ -27,38 +26,31 @@ export default class Pixim_Sound {
 		new Howl(data);
 	}
 	
-	play() {
-		var id = this.howl.play.apply(this.howl, arguments);
-		this._instanceIds.push(id);
+	static muteAll(isMute) {
 		
-		return id;
+	}
+	
+	play() {
+		return this.howl.play.apply(this.howl, arguments);
 	}
 	
 	mute() {
-		this.howl.mute.apply(this.howl, arguments);
+		return this.howl.mute.apply(this.howl, arguments);
 	}
 	
 	loop() {
-		this.howl.loop.apply(this.howl, arguments);
+		return this.howl.loop.apply(this.howl, arguments);
 	}
 	
 	volume() {
-		this.howl.volume.apply(this.howl, arguments);
+		return this.howl.volume.apply(this.howl, arguments);
 	}
 	
 	pause() {
-		this.howl.pause.apply(this.howl, arguments);
+		return this.howl.pause.apply(this.howl, arguments);
 	}
 	
-	stop(id) {
-		if (id) {
-			this.howl.stop(id);
-			return;
-		}
-		
-		var p = this._instanceIds;
-		for (var i = 0; i < p.length; i++) {
-			this.howl.stop(p[i]);
-		}
+	stop() {
+		return this.howl.stop.apply(this.howl, arguments);
 	}
 }

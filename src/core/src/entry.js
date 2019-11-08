@@ -11,7 +11,7 @@ import Task from './Task.js';
 import Constants from './Constants.js';
 
 /*!
- * Pixim.js - v2.0.0
+ * Pixim.js - v2.0.1
  * 
  * @requires pixi.js 4.5.1
  * @author makazu.mori@gmail.com (tawaship)
@@ -22,7 +22,7 @@ import Constants from './Constants.js';
 /**
  * @namespace Pixim
  */
-window.console.log('\r\n%c  Pixim.js %c v2.0.0  %c\r\n\r\n', 'color: #FFF; background: #0C3; padding: 5px; border-radius:12px 0 0 12px;', 'color: #FFF; background: #F33; padding: 5px;  border-radius:0 12px 12px 0;', 'padding: 5px;');
+window.console.log('\r\n%c  Pixim.js %c v2.0.1  %c\r\n\r\n', 'color: #FFF; background: #0C3; padding: 5px; border-radius:12px 0 0 12px;', 'color: #FFF; background: #F33; padding: 5px;  border-radius:0 12px 12px 0;', 'padding: 5px;');
 
 const Pixim = Object.defineProperties({}, {
 	Emitter: {
